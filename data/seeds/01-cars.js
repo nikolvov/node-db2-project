@@ -2,7 +2,7 @@
 
 const cars = [
     {
-      vin: '1111111111111',
+      vin: 'JH4KA7560RC003647',
       make: 'toyota',
       model: 'prius',
       mileage: 215000,
@@ -10,14 +10,14 @@ const cars = [
       transmission: 'manual'
     },
     {
-      vin: '1111111111112',
+      vin: 'JS2RA41S235163290',
       make: 'toyota',
       model: 'corolla',
       mileage: 115000,
       title: 'salvage'
     },
     {
-      vin: '1111111111113',
+      vin: '1GNDX03E03D188446',
       make: 'ford',
       model: 'focus',
       mileage: 15000
