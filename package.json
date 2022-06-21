@@ -9,8 +9,7 @@
     "rollback": "knex migrate:rollback",
     "migup": "knex migrate:up",
     "migdown": "knex migrate:down",
-    "seed": "knex seed:run",
-    "resetdb": "knex migrate:rollback && knex migrate:latest"
+    "seed": "knex seed:run"
   },
   "devDependencies": {
     "@types/jest": "^27.5.0",
