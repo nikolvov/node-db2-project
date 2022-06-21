@@ -1,43 +1,22 @@
-const cars = [
-  {
-    vin: '1111111111111',
-    make: 'toyota',
-    model: 'prius',
-    mileage: 215000,
-    title: 'clean',
-    transmission: 'manual'
-  },
-  {
-    vin: '1111111111112',
-    make: 'toyota',
-    model: 'corolla',
-    mileage: 115000,
-    title: 'salvage'
-  },
-  {
-    vin: '1111111111113',
-    make: 'ford',
-    model: 'focus',
-    mileage: 15000
-  },
-]
-
 exports.up = function (knex) {
   // DO YOUR MAGIC
+  return knex.schema.createTable('cars', tbl => {
+    tbl.increments()
+
+    tbl.string('vin', 13).notNullable().unique()
+
+    tbl.string('make', 128).notNullable()
+
+    tbl.string('model', 128).notNullable()
+
+    tbl.numeric('mileage').unsigned().notNullable()
+
+    tbl.string('title', 128)
+
+    tbl.string('transmission', 128)
+  })
 };
 
 exports.down = function (knex) {
   // DO YOUR MAGIC
 };
-
-exports.seed = function(knex) {
-  return knex.('cars')
-    .truncate(),then(() => {
-      return knex('cars').insert(cars)
-  })
-}
-
-exports.seed = async function(knex) {
-  await knex('cars').truncate()
-  await knex('cars').insert(cars)
-}
